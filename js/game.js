@@ -1,4 +1,4 @@
-// указываем с помощью JS что будем работать с canvas
+// задаем константу
 const canvas = document.getElementById("game");
 // указываем типы создаваемой игры 2d
 const ctx = canvas.getContext("2d");
@@ -50,17 +50,17 @@ function eatTail(head, arr) {
 	}
 }
 
-// Ресуем элементы игры с помощью drawImage
+// Рисуем элементы игры с помощью drawImage
 function drawGame() {
 	ctx.drawImage(ground, 0, 0); // drawImage ресует элементы по оси X и Y
 
 	ctx.drawImage(foodImg, food. x, food. y);
-// Ресуем змейку
+// Рисуем змейку
 	for(let i = 0; i < snake.length; i++) {
 		ctx.fillStyle = i == 0 ? "green" : "purple"; //fillStyle задает цвет змейки, голова + тело
 		ctx.fillRect(snake[i].x, snake[i].y, box, box ); //fillRect рисует залитый прямоугольник, цвет по умолчанию, черный
 	}
-// Ресуем счетчик съединой еды (score)
+// Рисуем счетчик съединой еды (score)
 	ctx.fillStyle = "white"; // fillStyle указывает цвет текса
 	ctx.font = "50px Arial"; // font задает высоту в PX + тип шрифта Arial
 	ctx.fillText(score, box * 2.5, box * 1.7); // fillText ресует сам текст, указывает переменную score+ координаты по x 2.5, y 1.7
